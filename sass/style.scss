@@ -1,0 +1,831 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Lato:wght@400;700;900&family=Nunito:wght@400;500;600;700;900&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;600;700;800&display=swap");
+
+@import "btnStyle";
+@import "about";
+
+.container-fluid {
+  padding: 0 4%;
+}
+
+$primary: rgb(255, 102, 0);
+$navLinks: rgb(219, 219, 219);
+// $button-color: #2f2f2f;
+$button-color: #111111;
+$text-color: gray;
+$text-color-in-dark: rgba(255, 255, 255, 0.637);
+
+$bannerHeight: 600px;
+
+$ff-inter: "Inter", sans-serif;
+$ff-lato: "Lato", sans-serif;
+$ff-nunito: "Nunito", sans-serif;
+$ff-poppins: "Poppins", sans-serif;
+$ff-playfair: "Playfair Display", serif;
+
+* {
+  font-family: $ff-poppins;
+}
+
+.section-margin {
+  padding: 55px 0;
+}
+
+//============================================================================
+// Section 1 - Navbar
+//============================================================================
+
+.nav-bg-style {
+  background-color : $button-color;
+}
+
+.navbar {
+  font-family: $ff-poppins;
+    
+  .logo {
+    position: relative;
+    
+    img {
+      width : 90px;
+    }
+
+    &::before {
+      position: absolute;
+      content : "";
+      width : 100%;
+      height : .5rem;
+      background-color: $primary;
+      bottom: -.5rem;
+      left : 0;
+      z-index: 11111;
+    }
+  }
+
+  .btn {
+
+    @include buttonStyle2;
+    color : $navLinks;
+    font-size: .9rem;
+    border : 1px solid $navLinks !important;
+
+    svg {
+      fill : $navLinks;
+        transform : scale(.8);
+    }
+    // background-color: #ffffff00;
+    // border: 1px solid #fff;
+    // border-radius: 0rem;
+    // transition: all 0.3s;
+
+    //  svg {
+      //    fill : #fff;
+      //    transform : scale(.9)
+    //  }
+
+    // &:focus {
+    //   box-shadow: unset;
+    // }
+    // &:hover {
+    //   background-color: #505050;
+    //   color: #fff !important;
+    // }
+  }
+  
+ 
+  
+
+  a {
+    color: $navLinks;
+    transition: color 0.2s ease-in-out;
+    font-size: 0.9rem;
+    padding: 0.75rem 0;
+    text-transform: uppercase;
+    color: $navLinks;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: darken($navLinks, 30%);
+      color: $primary;
+    }
+
+    &:focus {
+      color:#ffffff;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: $button-color;
+    padding: 0.5rem 0;
+    border-radius: unset;
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    .dropdown-item {
+      background-color: $button-color;
+      text-transform: uppercase;
+      padding: 1rem;
+      transition: all .4s;
+
+      &:hover {
+        background-color: lighten($button-color,10%);
+      }
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .dropdown-divider {
+    margin: 0;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .menu-icon {
+    font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .phone-icon {
+    font-size: 1rem;
+  }
+}
+
+//============================================================================
+// Section 2 - Banner
+//============================================================================
+
+.banner {
+  // margin-top: 90px;
+  margin-bottom: 100px;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+
+  img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+  }
+
+  h2 {
+    font-family: $ff-playfair;
+    font-size: 3.5rem;
+  }
+  p {
+    font-size: 0.9rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .banner-btn {
+    margin-top: 1.5rem;
+    @include buttonStyle2;
+    // border: 1px solid rgb(202, 202, 202);
+    // padding: 0.75rem 1rem;
+    // background-color: transparent;
+    // color: white;
+    // font-size: 0.9rem;
+    // text-transform: uppercase;
+    // display: flex;
+    // align-items: center;
+    // position: relative;
+
+    // svg {
+    //   fill: #fff;
+    //   margin-left: 0.5rem;
+    // }
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 0%;
+    //   background: rgba(255, 255, 255, 1);
+    //   left: 0;
+    //   bottom: 0;
+    //   transition: all 0.5s;
+    //   z-index: -1;
+    // }
+
+    // &:hover {
+    //   color: $button-color;
+
+    //   svg {
+    //     fill: $primary;
+    //   }
+    // }
+
+    // &:hover::after {
+    //   height: 100%;
+    // }
+  }
+
+ 
+
+
+  .carousel-item {
+
+
+    // transition: -webkit-transform 0.5s ease !important;
+    // transition: transform 0.5s ease !important;
+    // transition: transform 0.5s ease, -webkit-transform 0.5s ease !important;
+    // -webkit-backface-visibility: visible !important;
+    // backface-visibility: visible !important;
+
+    .carousel-caption-style {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #0000008a;
+      color: white;
+    }
+  }
+
+  .carousel-btns-box {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      border: 1px solid #d4d4d4;
+      background-color: transparent;
+      transition: all .5s;
+      
+      &:hover {
+        border-color : #fff;
+      }
+      
+      &:hover svg{
+        fill : $primary;
+        stroke : $primary;
+        stroke-width: 1px;
+      }
+      
+      svg {
+        fill: #fff;
+        transition: all .5s;
+      }
+    }
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 3;
+    margin: 0;
+
+    button {
+      width: 0.75rem;
+      height: 0.75rem;
+      border: none;
+      opacity: .5;
+     
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+    button.active {
+      opacity: 1;
+    }
+  }
+}
+
+//============================================================================
+// Section 2 - facilities
+//============================================================================
+
+.facilities {
+  // margin: 50px 0;
+
+  .facilities-card {
+    font-size: 0.9rem;
+    color: darken($text-color, 10%);
+
+    p {
+      font-size: 0.9rem;
+      color: $text-color;
+    }
+
+    svg {
+      transition: all 0.25s ease-in;
+      fill: $text-color;
+      transform: scale(1);
+      stroke: $text-color;
+      stroke-width: 0.3px;
+    }
+
+    &:hover svg {
+      fill: $primary;
+      transform: translateY(-0.2rem);
+    }
+  }
+}
+
+//============================================================================
+// Section 4 -
+//============================================================================
+
+#aboutUs {
+  h2 {
+    font-family: $ff-playfair;
+  }
+
+  p {
+    @include paraStyle;
+  }
+
+  .btn {
+    @include button;
+  }
+}
+
+//============================================================================
+// Section 5 -
+//============================================================================
+
+#recentProjects {
+  h2 {
+    font-family: $ff-playfair;
+  }
+
+  h6 {
+    font-size: 0.95rem;
+    color: #505050;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+
+  .recent-project-container {
+    display: flex;
+    gap: 0.1rem;
+
+    .recent-project-card {
+      flex: 1;
+      height: 500px;
+      position: relative;
+      transition: flex 0.5s ease-in-out;
+
+      &:hover {
+        flex: 2;
+
+        img {
+          filter: grayscale(0%);
+        }
+
+        .recent-project-card-text {
+          opacity: 1;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+        transition: filter 0.5s ease-in-out;
+      }
+      .recent-project-card-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0)
+        );
+        width: 100%;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        transition-delay: 0.5s;
+
+        h5 {
+          letter-spacing: 0.1rem;
+          font-size: 1rem;
+        }
+
+        p {
+          letter-spacing: 0.1rem;
+          font-size: 0.9rem;
+          color: #fff;
+        }
+
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-size: 0.9rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+//============================================================================
+// Section 6 - Services
+//============================================================================
+
+.services {
+  h2 {
+    font-family: $ff-playfair;
+  }
+
+  h6 {
+    font-size: 0.95rem;
+    color: #505050;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  svg {
+    fill: darken($text-color, 10%);
+    transform: scale(0.9);
+    stroke: darken($text-color, 10%);
+    stroke-width: 0.75px;
+  }
+}
+
+//============================================================================
+// Portfolio
+//============================================================================
+
+.portfolio {
+  h2 {
+    font-family: $ff-playfair;
+  }
+
+  h6 {
+    font-size: 0.95rem;
+    color: #505050;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+
+  .nav-link-style.active {
+    background-color: $button-color;
+    border: 0.1rem solid $button-color;
+    border-radius: 0rem;
+    color: #fff !important;
+    transition: all 0.3s ease-in-out;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .nav-link-style {
+    background-color: #fff;
+    border: 0.1rem solid $button-color;
+    border-radius: 0rem;
+    color: $button-color !important;
+    transition: all 0.3s ease-in-out;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $button-color;
+      border: 0.1rem solid $button-color;
+      border-radius: 0rem;
+      color: #fff !important;
+      transition: all 0.3s ease-in-out;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+  }
+
+  .homepage-portfolio {
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    p {
+      font-size: 0.8rem;
+      color: $text-color;
+    }
+
+    h5 {
+      color: #000;
+    }
+  }
+
+  .btn {
+    @include button;
+  }
+
+  .portfolio-img-box {
+    position: relative;
+
+    .bottom-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s;
+      z-index: 111;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover .bottom-image {
+      opacity: 1;
+    }
+  }
+}
+
+//============================================================================
+// Instagram posts
+//============================================================================
+
+.instagram {
+  h2 {
+    font-family: $ff-playfair;
+  }
+
+  h6 {
+    font-size: 0.95rem;
+    color: #505050;
+  }
+
+  .ig-post {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      transition: all 0.5s;
+      transform: scale(1);
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    &:hover .ig-icon {
+      opacity: 1;
+    }
+  }
+
+  .ig-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.616),
+      rgba(255, 255, 255, 0)
+    );
+    opacity: 0;
+    transition: all 0.5s;
+
+    svg {
+      transform: scale(2);
+      fill: rgb(221, 221, 221);
+    }
+  }
+}
+
+//============================================================================
+//Footer
+//============================================================================
+
+.section-margin.footer {
+  padding-bottom: 0;
+  padding-top: 100px;
+}
+
+.footer {
+  // background-color: $button-color;
+  background: linear-gradient(to top,rgba(19, 19, 19, 0.75), rgba(20, 20, 20, 0.75)),
+    url(../images/footer-bg.jpg);
+  background-size: cover;
+  background-position: bottom;
+  margin-top: 55px;
+
+  img {
+    width: 5rem;
+  }
+
+  p {
+    color: $text-color-in-dark;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-links {
+    a {
+      text-decoration: none;
+      color: $text-color-in-dark;
+      font-size: 0.9rem;
+    }
+
+    &:hover svg {
+      fill: $primary;
+    }
+  }
+
+  h6 {
+    color: rgba(255, 255, 255, 0.945);
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    a {
+     
+      
+      svg {
+        fill: lighten($text-color-in-dark, 20%);
+        transform: scale(1);
+        margin-right: 0.4rem;
+        transition: fill 0.5s;
+
+        &:hover {
+          fill: rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+
+  svg {
+    fill: $text-color-in-dark;
+    transform: scale(0.8);
+
+    transition: fill 0.4s;
+  }
+
+  .developer-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.137);
+
+    p {
+      display: flex;
+      align-items: center;
+      color: $text-color-in-dark;
+      font-size: 0.8rem;
+
+      svg {
+        margin: 0;
+        fill: #fff;
+        transform: scale(0.7);
+      }
+
+      span {
+        color: $primary;
+        padding: 0 0.2rem;
+      }
+    }
+  }
+}
+
+//============================================================================
+// MOVE TO TOP BUTTON
+//============================================================================
+
+.moveToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: -100%;
+  z-index: 9999;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  opacity: 0.75;
+  transition: all 1s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  svg {
+    stroke: $primary;
+    stroke-width: 0.5px;
+    fill: $primary;
+  }
+}
+
+//============================================================================
+// MEDIA QUERIES
+//============================================================================
+@media only screen and (max-width: 991px) {
+
+  .container-fluid {
+    padding: 0 2%;
+  }
+
+  .section-margin {
+    padding: 30px 0;
+  }
+
+  .navbar {
+    background-color: #111111;
+
+    .navbar-collapse {
+      padding: 1rem 0;
+    }
+ 
+    .dropdown-menu {
+      box-shadow: unset;
+      background-color: transparent;
+
+      .dropdown-item {
+        background-color: transparent;
+      }
+    }
+  }
+
+  #banner {
+    margin-bottom: 50px;
+  }
+  // size of carousel image
+
+  .banner-carousel {
+    height: 500px !important;
+
+    .carousel-item {
+      height: 500px !important;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .recent-project-container {
+    flex-direction: column;
+    gap: 1.5rem !important;
+
+    .recent-project-card-text {
+      opacity: 1 !important;
+      transition: unset;
+      transition-delay: unset;
+    }
+  }
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 576px) {
+    .navbar {
+      .logo {
+        img{
+          width : 70px;
+        }
+      }
+    }
+
+
+
+}
